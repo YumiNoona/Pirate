@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://bm7odin5iey8n"]
+
+[ext_resource type="Script" uid="uid://pukqmtdw6uog" path="res://Scripts/Treasures/Coin.gd" id="1_f8qfx"]
+[ext_resource type="Texture2D" uid="uid://ikh8yilc6x32" path="res://Treasure Hunters/Pirate Treasure/Gold Coin/01.png" id="2_2rpxy"]
+[ext_resource type="Texture2D" uid="uid://bu7t3mrw8fehv" path="res://Treasure Hunters/Pirate Treasure/Gold Coin/02.png" id="3_xsw27"]
+[ext_resource type="Texture2D" uid="uid://cnokdbimwcitb" path="res://Treasure Hunters/Pirate Treasure/Gold Coin/03.png" id="4_ghelq"]
+[ext_resource type="Texture2D" uid="uid://bkx3helb604u0" path="res://Treasure Hunters/Pirate Treasure/Gold Coin/04.png" id="5_f8qfx"]
+[ext_resource type="Texture2D" uid="uid://5birvh2201nm" path="res://Treasure Hunters/Pirate Treasure/Coin Effect/01.png" id="6_tmhwq"]
+[ext_resource type="Texture2D" uid="uid://q1d0m4u266j7" path="res://Treasure Hunters/Pirate Treasure/Coin Effect/02.png" id="7_3uvfs"]
+[ext_resource type="Texture2D" uid="uid://845kksuq64xb" path="res://Treasure Hunters/Pirate Treasure/Coin Effect/03.png" id="8_jj1g2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36cwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2rpxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xsw27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ghelq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f8qfx")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tmhwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3uvfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jj1g2")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2psm"]
+radius = 7.0
+
+[node name="GoldCoin" type="RigidBody2D"]
+collision_layer = 16777216
+collision_mask = 257
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_f8qfx")
+_value = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_36cwg")
+animation = &"Coin"
+autoplay = "Coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2psm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

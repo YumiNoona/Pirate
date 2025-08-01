@@ -1,0 +1,13 @@
+# Godot-specific
+.import/
+.export/
+.godot/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Godot files to ignore
+*.import
+*.tmp
+*.log

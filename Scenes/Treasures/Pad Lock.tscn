@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://pv7lwflmxjmr"]
+
+[ext_resource type="Texture2D" uid="uid://cp0ylgkqdjyi0" path="res://Treasure Hunters/Merchant Ship/Chest/Padlock/1.png" id="2_72kuq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcd5d"]
+height = 20.0
+
+[node name="PadLock" type="RigidBody2D"]
+z_index = -1
+collision_layer = 16777216
+lock_rotation = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_72kuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_jcd5d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

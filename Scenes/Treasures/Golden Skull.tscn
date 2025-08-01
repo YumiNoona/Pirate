@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=3 uid="uid://d1b3lumhy27j8"]
+
+[ext_resource type="Script" uid="uid://dsl7tj3t7ticf" path="res://Scripts/Treasures/Skull.gd" id="1_7p0jf"]
+[ext_resource type="Texture2D" uid="uid://bmna6vd7ahsiw" path="res://Treasure Hunters/Pirate Treasure/Skull Effect/01.png" id="1_iwb8q"]
+[ext_resource type="Texture2D" uid="uid://777x6q5ve8c1" path="res://Treasure Hunters/Pirate Treasure/Skull Effect/02.png" id="2_7p0jf"]
+[ext_resource type="Texture2D" uid="uid://dfeyqgxwpps5g" path="res://Treasure Hunters/Pirate Treasure/Skull Effect/03.png" id="3_ndqeo"]
+[ext_resource type="Texture2D" uid="uid://c2hxhf8sgp01d" path="res://Treasure Hunters/Pirate Treasure/Skull Effect/04.png" id="4_io873"]
+[ext_resource type="Texture2D" uid="uid://dqamwt362a8v1" path="res://Treasure Hunters/Pirate Treasure/Skull Effect/05.png" id="5_r8t2g"]
+[ext_resource type="Texture2D" uid="uid://dvrjnxbilunpx" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/01.png" id="6_c8kji"]
+[ext_resource type="Texture2D" uid="uid://c8j628dfi7715" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/02.png" id="7_blo6u"]
+[ext_resource type="Texture2D" uid="uid://bwacgqdnaoy3d" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/03.png" id="8_u6nnu"]
+[ext_resource type="Texture2D" uid="uid://k7bsdvuknje1" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/04.png" id="9_tm6bk"]
+[ext_resource type="Texture2D" uid="uid://6lpy7lj8nnag" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/05.png" id="10_m07q5"]
+[ext_resource type="Texture2D" uid="uid://c6f2udjspuyrn" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/06.png" id="11_3f1a6"]
+[ext_resource type="Texture2D" uid="uid://dexofug8tx5j1" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/07.png" id="12_bjc10"]
+[ext_resource type="Texture2D" uid="uid://bm2l853y1j63l" path="res://Treasure Hunters/Pirate Treasure/Golden Skull/08.png" id="13_tduf7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6c84w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iwb8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7p0jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndqeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_io873")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r8t2g")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c8kji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_blo6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u6nnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tm6bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m07q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3f1a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bjc10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tduf7")
+}],
+"loop": true,
+"name": &"Skull",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmdo6"]
+radius = 9.0
+
+[node name="Golden Skull" type="Area2D"]
+collision_layer = 16777216
+collision_mask = 256
+script = ExtResource("1_7p0jf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6c84w")
+animation = &"Skull"
+autoplay = "Skull"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+shape = SubResource("CircleShape2D_tmdo6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

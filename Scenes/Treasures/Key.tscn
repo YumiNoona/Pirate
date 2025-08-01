@@ -1,0 +1,90 @@
+[gd_scene load_steps=16 format=3 uid="uid://cb5faegudx386"]
+
+[ext_resource type="Script" uid="uid://wwcp1tm8gqu" path="res://Scripts/Treasures/Key.gd" id="1_ql0bk"]
+[ext_resource type="Texture2D" uid="uid://djgatdcxry4o0" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/1.png" id="2_ymsao"]
+[ext_resource type="Texture2D" uid="uid://ca0bdo2lbtc1i" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/2.png" id="3_ql0bk"]
+[ext_resource type="Texture2D" uid="uid://bxwo5eckp2udm" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/3.png" id="4_kkgl5"]
+[ext_resource type="Texture2D" uid="uid://bw2t2vi6omwih" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/4.png" id="5_tcmte"]
+[ext_resource type="Texture2D" uid="uid://chim236dtayb1" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/5.png" id="6_ogoxh"]
+[ext_resource type="Texture2D" uid="uid://cwb85aarubb8v" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/6.png" id="7_hykkk"]
+[ext_resource type="Texture2D" uid="uid://doh14i1pnk4e4" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/7.png" id="8_h54g4"]
+[ext_resource type="Texture2D" uid="uid://b1xbi0fgwf11f" path="res://Treasure Hunters/Merchant Ship/Chest Key/Idle/8.png" id="9_io7tf"]
+[ext_resource type="Texture2D" uid="uid://bndve1vf2c3jr" path="res://Treasure Hunters/Merchant Ship/Chest Key/Effect/1.png" id="10_ql0bk"]
+[ext_resource type="Texture2D" uid="uid://cq2ls3ckw6gwd" path="res://Treasure Hunters/Merchant Ship/Chest Key/Effect/2.png" id="11_kkgl5"]
+[ext_resource type="Texture2D" uid="uid://dwwcaek7xygp6" path="res://Treasure Hunters/Merchant Ship/Chest Key/Effect/3.png" id="12_tcmte"]
+[ext_resource type="Texture2D" uid="uid://c0bntlx86ib76" path="res://Treasure Hunters/Merchant Ship/Chest Key/Effect/4.png" id="13_ogoxh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4tpuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ymsao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ql0bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kkgl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tcmte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ogoxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hykkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h54g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_io7tf")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ql0bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kkgl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tcmte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ogoxh")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcd5d"]
+radius = 6.0
+height = 22.0
+
+[node name="Key" type="RigidBody2D"]
+collision_layer = 16777216
+collision_mask = 257
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ql0bk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4tpuy")
+animation = &"Coin"
+autoplay = "Coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jcd5d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

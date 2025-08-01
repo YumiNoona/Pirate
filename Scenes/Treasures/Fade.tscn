@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c51rn4rj4etxi"]
+
+[ext_resource type="Script" uid="uid://u308oymn3q5y" path="res://Scripts/Health/Fade.gd" id="1_imq8k"]
+
+[node name="Fade" type="ColorRect"]
+visible = false
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_imq8k")
