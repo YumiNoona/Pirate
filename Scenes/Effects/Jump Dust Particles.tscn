@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="Dust Particles" type="AnimatedSprite2D"]
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_lqv8q")
 animation = &"Dust"
 script = ExtResource("6_apo7g")

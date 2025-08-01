@@ -15,7 +15,7 @@ func _input(event: InputEvent):
 			_character.stop_jump()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not _is_enabled:
 		return
 	_character.run(Input.get_axis("Run_Left", "Run_Right"))

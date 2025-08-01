@@ -119,7 +119,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxTexture_it6vq")
 script = ExtResource("1_ah4vs")
 
 [node name="Roger" parent="." instance=ExtResource("1_af3mk")]
-position = Vector2(-41, -16)
+position = Vector2(2406, 492)
 _speed = 8.0
 _acceleration = 16.0
 _deceleration = 32.0
@@ -130,7 +130,7 @@ _invincible_duration = 0.0
 script = ExtResource("2_v6gkx")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
-position = Vector2(126, 34)
+position = Vector2(2573, 542)
 zoom = Vector2(3, 3)
 script = ExtResource("3_ah4vs")
 _subject = NodePath("../Roger")
@@ -489,10 +489,10 @@ texture = ExtResource("40_2aybk")
 
 [node name="Victory" type="AudioStreamPlayer2D" parent="."]
 
-[connection signal="changed_direction" from="Roger" to="Camera2D" method="_on_roger_changed_direction"]
+[connection signal="changed_direction" from="Roger" to="Camera2D" method="_on_subject_changed_direction"]
 [connection signal="dead" from="Roger" to="." method="_on_player_dead"]
 [connection signal="health_changed" from="Roger" to="GameUI/HealthBar" method="set_value"]
-[connection signal="landed" from="Roger" to="Camera2D" method="_on_roger_landed"]
+[connection signal="landed" from="Roger" to="Camera2D" method="_on_subject_landed"]
 [connection signal="pressed" from="GameUI/GameOver/VBoxContainer/Wood/VBoxContainer/Retry/BTN_Retry" to="." method="_on_btn_retry_pressed"]
 [connection signal="pressed" from="GameUI/GameOver/VBoxContainer/Wood/VBoxContainer/Level Select/BTN_Level Select" to="." method="_on_btn_level_select_pressed"]
 [connection signal="pressed" from="GameUI/GameOver/VBoxContainer/Wood/VBoxContainer/Quit/BTN_Quit" to="." method="_on_btn_quit_pressed"]

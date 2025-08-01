@@ -39,7 +39,7 @@ func set_bounds(_maximum_boundary : Vector2, _minimum_boundary : Vector2):
 
 
 
-func _process(delta: float):
+func _process(_delta: float):
 	position.x  = _subject.position.x + _look_ahead_distance
 	position.y  = _floor_height + _offset.y
 	if _is_bound:
@@ -49,7 +49,7 @@ func _process(delta: float):
 
 
 func _on_subject_changed_direction(is_facing_left: bool):
-	if _look_ahead_tween && _look_ahead_tween.is_running():
+	if _floor_height_tween && _floor_height_tween.is_running():
 		_look_ahead_tween.kill()
 	_look_ahead_tween = create_tween().set_trans(_look_ahead_trans_type).set_ease(_look_ahead_ease_type)
 	_look_ahead_tween.tween_property(self, "_look_ahead_distance",_offset.x * (-1 if is_facing_left else 1),_look_ahead_duration)

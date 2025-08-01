@@ -125,7 +125,7 @@ func face_left():
 	if _is_dead:
 		return
 	_is_facing_left = true
-	_sprite.flip_h = true
+	_sprite.flip_h = not _sprite_face_left
 	changed_direction.emit(_is_facing_left)
 
 
@@ -134,7 +134,7 @@ func face_right():
 	if _is_dead:
 		return
 	_is_facing_left = false
-	_sprite.flip_h = false
+	_sprite.flip_h = _sprite_face_left
 	changed_direction.emit(_is_facing_left)
 
 
@@ -187,7 +187,7 @@ func dive():
 func _physics_process(delta: float):
 	if not _is_facing_left && sign(_direction) == -1:
 		face_left()
-	elif not _is_facing_left && sign(_direction) == 1:
+	elif _is_facing_left && sign(_direction) == 1:
 		face_right()
 	if _is_in_water:
 		_water_physics(delta)

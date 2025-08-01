@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dj2t3qeu8vp8i"]
+[gd_scene load_steps=78 format=3 uid="uid://dj2t3qeu8vp8i"]
 
 [ext_resource type="Script" uid="uid://dndqvloy7t205" path="res://Scripts/Characters/Characters.gd" id="1_mseo1"]
 [ext_resource type="Texture2D" uid="uid://d22rxf8wclrx3" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_g7xoc"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dke1clhyvs56b" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="14_0xots"]
 [ext_resource type="Texture2D" uid="uid://ndgko6q5r7wr" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="15_la7g4"]
 [ext_resource type="Texture2D" uid="uid://qhj74y6u1dnw" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="16_0xots"]
+[ext_resource type="AudioStream" uid="uid://cpclcib5g6kfo" path="res://Audio/Land.mp3" id="16_n12rv"]
 [ext_resource type="Texture2D" uid="uid://dv3pgw3hcp0sq" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 01.png" id="17_gyjaf"]
 [ext_resource type="Texture2D" uid="uid://d2pr3eq15e3ev" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 02.png" id="18_mf7a3"]
 [ext_resource type="PackedScene" uid="uid://b0pou66sk3wsh" path="res://Scenes/Effects/Fall Dust Particles.tscn" id="19_mf7a3"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://d3vu3jf1hffph" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 01.png" id="26_ae0cd"]
 [ext_resource type="Texture2D" uid="uid://qgew5awr6ty0" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 02.png" id="27_kilcf"]
 [ext_resource type="Texture2D" uid="uid://clb8i7i70n35h" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 03.png" id="28_h368p"]
+[ext_resource type="AudioStream" uid="uid://dssfgnqgkhqs" path="res://Audio/Jump.mp3" id="28_i881w"]
 [ext_resource type="Texture2D" uid="uid://cclytnuaefpy3" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 04.png" id="29_f54c0"]
 [ext_resource type="Texture2D" uid="uid://cfbmt50rfo17d" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png" id="30_e0k5m"]
 [ext_resource type="Texture2D" uid="uid://p0twlyx6tsd7" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png" id="31_lkma1"]
@@ -146,8 +148,8 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
+"start_offset": 0.03,
+"stream": ExtResource("16_n12rv")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -241,7 +243,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": null
+"stream": ExtResource("28_i881w")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -393,7 +395,7 @@ advance_expression = "velocity.y >= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n50hm"]
 advance_mode = 2
-advance_expression = "Is_on_floor()"
+advance_expression = "is_on_floor()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hxacm"]
 switch_mode = 2
@@ -413,6 +415,7 @@ states/Jump/position = Vector2(308, 219)
 states/Locomotion/node = SubResource("AnimationNodeStateMachine_lqv8q")
 states/Locomotion/position = Vector2(456, 100)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_ae0cd"), "Locomotion", "Jump", SubResource("AnimationNodeStateMachineTransition_najpk"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_vysxb"), "Fall", "Ground", SubResource("AnimationNodeStateMachineTransition_n50hm"), "Ground", "Locomotion", SubResource("AnimationNodeStateMachineTransition_hxacm"), "Locomotion", "Fall", SubResource("AnimationNodeStateMachineTransition_lqv8q")]
+graph_offset = Vector2(1, 88)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h368p"]
 advance_mode = 2
@@ -454,6 +457,7 @@ states/Movement/node = SubResource("AnimationNodeStateMachine_kilcf")
 states/Movement/position = Vector2(517, 186)
 states/Start/position = Vector2(293, 186)
 transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_h368p"), "Movement", "Hit", SubResource("AnimationNodeStateMachineTransition_kilcf"), "Hit", "Movement", SubResource("AnimationNodeStateMachineTransition_f54c0"), "Movement", "Dead Hit", SubResource("AnimationNodeStateMachineTransition_n12rv"), "Dead Hit", "Dead Ground", SubResource("AnimationNodeStateMachineTransition_i881w"), "Dead Hit", "Movement", SubResource("AnimationNodeStateMachineTransition_lkma1"), "Dead Ground", "Movement", SubResource("AnimationNodeStateMachineTransition_rljt8")]
+graph_offset = Vector2(146, 106)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e0k5m"]
 advance_mode = 2
@@ -484,7 +488,6 @@ _speed = 5.0
 _acceleration = 10.0
 _deceleration = 20.0
 _jump_dust = ExtResource("2_mf7a3")
-_density = -0.1
 _invincible_duration = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
