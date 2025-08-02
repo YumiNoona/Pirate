@@ -1,15 +1,15 @@
 [gd_scene load_steps=26 format=3 uid="uid://cvy6fvm0rka1j"]
 
 [ext_resource type="Script" uid="uid://b0yp8ps83fdas" path="res://Scripts/Core/Level.gd" id="1_4tpuy"]
-[ext_resource type="Texture2D" uid="uid://cxubos1o3iqcp" path="res://Treasure Hunters/Palm Tree Island/Terrain/Terrain (32x32).png" id="1_af8cf"]
-[ext_resource type="Texture2D" uid="uid://pja7tjv1ut82" path="res://Treasure Hunters/Palm Tree Island/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_4tpuy"]
+[ext_resource type="Texture2D" uid="uid://k3gmamy4rshg" path="res://Treasure Hunters/Palm Tree Island/Terrain/Terrain (32x32).png" id="1_af8cf"]
+[ext_resource type="Texture2D" uid="uid://b2dqnny4sfeoh" path="res://Treasure Hunters/Palm Tree Island/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_4tpuy"]
 [ext_resource type="Script" uid="uid://ce3i5bmslsmrd" path="res://Scripts/Effects/Water.gd" id="3_elu0i"]
 [ext_resource type="PackedScene" uid="uid://c2wn3q2v2cyeb" path="res://Scenes/Effects/Water Particles.tscn" id="4_6c84w"]
-[ext_resource type="Texture2D" uid="uid://bcpsjde6ft18d" path="res://Treasure Hunters/Merchant Ship/Water/Water/Bottom/1.png" id="5_qf5qf"]
-[ext_resource type="Texture2D" uid="uid://dxmi6l80cpklv" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/1.png" id="6_uoe8b"]
-[ext_resource type="Texture2D" uid="uid://u0j26p1cevdw" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/2.png" id="7_ok31i"]
-[ext_resource type="Texture2D" uid="uid://db6u0l2ua0ec" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/3.png" id="8_l7syk"]
-[ext_resource type="Texture2D" uid="uid://piaul5ruujo0" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/4.png" id="9_x2psm"]
+[ext_resource type="Texture2D" uid="uid://bsccxyordhikc" path="res://Treasure Hunters/Merchant Ship/Water/Water/Bottom/1.png" id="5_qf5qf"]
+[ext_resource type="Texture2D" uid="uid://c67tka8hdhrbt" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/1.png" id="6_uoe8b"]
+[ext_resource type="Texture2D" uid="uid://cwh4difhg86pm" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/2.png" id="7_ok31i"]
+[ext_resource type="Texture2D" uid="uid://clgmivdracdp" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/3.png" id="8_l7syk"]
+[ext_resource type="Texture2D" uid="uid://2avbk4cr308i" path="res://Treasure Hunters/Merchant Ship/Water/Water/Top/4.png" id="9_x2psm"]
 [ext_resource type="PackedScene" uid="uid://b5g6mdnmam7xm" path="res://Scenes/Decoration/Palm Tree.tscn" id="10_f6bke"]
 [ext_resource type="PackedScene" uid="uid://qp3mu42ii322" path="res://Scenes/Treasures/Silver Coin.tscn" id="12_elu0i"]
 [ext_resource type="PackedScene" uid="uid://bm7odin5iey8n" path="res://Scenes/Treasures/Gold Coin.tscn" id="13_6c84w"]
@@ -1190,7 +1190,7 @@ position = Vector2(319, -26)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Start" type="Node2D" parent="Checkpoints"]
-position = Vector2(2478, 485)
+position = Vector2(-86, -66)
 
 [node name="Middle" parent="Checkpoints" instance=ExtResource("18_tvan6")]
 position = Vector2(627, 0)

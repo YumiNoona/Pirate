@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2wn3q2v2cyeb"]
 
-[ext_resource type="Texture2D" uid="uid://bp70ud4y26gov" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/1.png" id="1_jtrxl"]
-[ext_resource type="Texture2D" uid="uid://hucamjjein5p" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/2.png" id="2_t222c"]
-[ext_resource type="Texture2D" uid="uid://blj26ir1qvlmc" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/3.png" id="3_1u0on"]
-[ext_resource type="Texture2D" uid="uid://yi10s28g4qg4" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/4.png" id="4_umrsd"]
-[ext_resource type="Texture2D" uid="uid://d0x3syycgkd0f" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/5.png" id="5_e1snq"]
+[ext_resource type="Texture2D" uid="uid://c10ih0068mqy3" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/1.png" id="1_jtrxl"]
+[ext_resource type="Texture2D" uid="uid://cye6bubhbs477" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/2.png" id="2_t222c"]
+[ext_resource type="Texture2D" uid="uid://bsjvba2qk4t21" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/3.png" id="3_1u0on"]
+[ext_resource type="Texture2D" uid="uid://bqc128hscg7ui" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/4.png" id="4_umrsd"]
+[ext_resource type="Texture2D" uid="uid://d4irsiacvhoxb" path="res://Treasure Hunters/Merchant Ship/Water/Water Splash 1/5.png" id="5_e1snq"]
 [ext_resource type="Script" uid="uid://d08mloy2jrsfb" path="res://Scripts/Environment/Dust.gd" id="6_1v57u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lqv8q"]

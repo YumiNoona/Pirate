@@ -47,7 +47,6 @@ var _invincible_time : Timer
 @export_category("Combat")
 
 @export_range(0,5)  var _invincible_duration : float
-@export_range(0,5)  var _attack_damage : int = 1
 @export var _is_hit : bool
 @export var _is_dead : bool
 @export var _wants_to_attack : bool
@@ -73,7 +72,10 @@ func  _ready():
 	_deceleration *= Global.pixelpertile
 	_jump_height *= Global.pixelpertile
 	_jump_velocity = sqrt(_jump_height * gravity * 2) * -1
-	face_left() if _is_facing_left else face_right()
+	if _is_facing_left:
+		face_left()
+	else:
+		face_right()
 	if _invincible_duration != 0:
 		_invincible_time = $HurtBox/Invincible
 

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qw26vmas2wc7"]
+
+[node name="Patrol" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-16, -8)
+target_position = Vector2(0, 16)
