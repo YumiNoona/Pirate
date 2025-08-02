@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://sa1gdlpi8idf" path="res://Treasure Hunters/The Crusty Crew/Pink Star/02-Run/Run 06.png" id="39_mte57"]
 
 [sub_resource type="Animation" id="Animation_xtvqo"]
-resource_name = "anticipation"
+resource_name = "Anticipation"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -69,7 +69,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_i1edr"]
-resource_name = "attack"
+resource_name = "Attack"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -123,7 +123,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_8vfsq"]
-resource_name = "dead_ground"
+resource_name = "Dead Ground"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -139,7 +139,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_x7ybc"]
-resource_name = "dead_hit"
+resource_name = "Dead Hit"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -155,7 +155,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_asfii"]
-resource_name = "fall"
+resource_name = "Fall"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -170,6 +170,34 @@ tracks/0/keys = {
 "values": [ExtResource("1_x3u1q")]
 }
 
+[sub_resource type="Animation" id="Animation_g27f8"]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_ru2jo"), ExtResource("20_tamqg"), ExtResource("21_8mw7b"), ExtResource("22_a17li")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Resource" id="Resource_xjncq"]
 metadata/__load_path__ = "res://Scenes/Dust/fall_dust.tscn"
 
@@ -177,7 +205,7 @@ metadata/__load_path__ = "res://Scenes/Dust/fall_dust.tscn"
 metadata/__load_path__ = "res://Sound Effects/Impacts/209133__lukesharples__fall-to-the-floor.wav"
 
 [sub_resource type="Animation" id="Animation_w7ei2"]
-resource_name = "ground"
+resource_name = "Ground"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -221,36 +249,8 @@ tracks/2/keys = {
 }
 tracks/2/use_blend = true
 
-[sub_resource type="Animation" id="Animation_g27f8"]
-resource_name = "hit"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("19_ru2jo"), ExtResource("20_tamqg"), ExtResource("21_8mw7b"), ExtResource("22_a17li")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:_is_hit")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_ubroc"]
-resource_name = "idle"
+resource_name = "Idle"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -270,7 +270,7 @@ tracks/0/keys = {
 metadata/__load_path__ = "res://Sound Effects/Voices/209177__lukesharples__hee.wav"
 
 [sub_resource type="Animation" id="Animation_u2lx2"]
-resource_name = "jump"
+resource_name = "Jump"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -304,7 +304,7 @@ tracks/1/use_blend = true
 metadata/__load_path__ = "res://Scenes/Dust/run_dust.tscn"
 
 [sub_resource type="Animation" id="Animation_7lm3y"]
-resource_name = "run"
+resource_name = "Run"
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -336,16 +336,16 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1au2v"]
 _data = {
-&"anticipation": SubResource("Animation_xtvqo"),
-&"attack": SubResource("Animation_i1edr"),
-&"dead_ground": SubResource("Animation_8vfsq"),
-&"dead_hit": SubResource("Animation_x7ybc"),
-&"fall": SubResource("Animation_asfii"),
-&"ground": SubResource("Animation_w7ei2"),
-&"hit": SubResource("Animation_g27f8"),
-&"idle": SubResource("Animation_ubroc"),
-&"jump": SubResource("Animation_u2lx2"),
-&"run": SubResource("Animation_7lm3y")
+&"Anticipation": SubResource("Animation_xtvqo"),
+&"Attack": SubResource("Animation_i1edr"),
+&"Dead Ground": SubResource("Animation_8vfsq"),
+&"Dead Hit": SubResource("Animation_x7ybc"),
+&"Fall": SubResource("Animation_asfii"),
+&"Ground": SubResource("Animation_w7ei2"),
+&"Hit": SubResource("Animation_g27f8"),
+&"Idle": SubResource("Animation_ubroc"),
+&"Jump": SubResource("Animation_u2lx2"),
+&"Run": SubResource("Animation_7lm3y")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r2kpf"]
@@ -542,7 +542,7 @@ collision_mask = 65799
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -14)
-texture = ExtResource("2_g1s4b")
+texture = ExtResource("34_jhsl1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -574,7 +574,6 @@ debug_color = Color(0, 0.639216, 0.356863, 0.419608)
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 262144
 collision_mask = 512
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

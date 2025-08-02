@@ -544,7 +544,7 @@ collision_mask = 65799
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
-texture = ExtResource("40_6ripn")
+texture = ExtResource("35_majr7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

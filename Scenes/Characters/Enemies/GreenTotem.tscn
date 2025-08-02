@@ -29,7 +29,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_raypv"]
-resource_name = "destroyed"
+resource_name = "Destroyed"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -71,7 +71,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ccnjw"]
-resource_name = "fire"
+resource_name = "Fire"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -113,7 +113,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_sc8wu"]
-resource_name = "hit"
+resource_name = "Hit"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -141,7 +141,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_h8vsf"]
-resource_name = "idle"
+resource_name = "Idle"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -158,11 +158,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfisj"]
 _data = {
-&"RESET": SubResource("Animation_17lif"),
-&"destroyed": SubResource("Animation_raypv"),
-&"fire": SubResource("Animation_ccnjw"),
-&"hit": SubResource("Animation_sc8wu"),
-&"idle": SubResource("Animation_h8vsf")
+&"Destroyed": SubResource("Animation_raypv"),
+&"Fire": SubResource("Animation_ccnjw"),
+&"Hit": SubResource("Animation_sc8wu"),
+&"Idle": SubResource("Animation_h8vsf"),
+&"RESET": SubResource("Animation_17lif")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ltwp7"]

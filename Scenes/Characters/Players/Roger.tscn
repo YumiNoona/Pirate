@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dj2t3qeu8vp8i"]
+[gd_scene load_steps=94 format=3 uid="uid://dj2t3qeu8vp8i"]
 
 [ext_resource type="Script" uid="uid://dndqvloy7t205" path="res://Scripts/Characters/Characters.gd" id="1_mseo1"]
 [ext_resource type="Texture2D" uid="uid://b40f5erdneox2" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_g7xoc"]
@@ -35,6 +35,19 @@
 [ext_resource type="Texture2D" uid="uid://1xri02kyrocw" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png" id="31_lkma1"]
 [ext_resource type="Texture2D" uid="uid://dfkv226dj8tg6" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 03.png" id="32_n12rv"]
 [ext_resource type="Texture2D" uid="uid://cn6mxvcnybome" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 04.png" id="33_i881w"]
+[ext_resource type="Texture2D" uid="uid://blascr8vrnjt7" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/24-Attack 1/Attack 1 01.png" id="36_20c6k"]
+[ext_resource type="Texture2D" uid="uid://dcchtaetjhqfr" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/24-Attack 1/Attack 1 02.png" id="37_2plbx"]
+[ext_resource type="Texture2D" uid="uid://daw5cyg4nqje" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/24-Attack 1/Attack 1 03.png" id="38_capee"]
+[ext_resource type="Texture2D" uid="uid://ko5i6jiuqdly" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/25-Attack 2/Attack 2 01.png" id="39_ysycg"]
+[ext_resource type="Texture2D" uid="uid://cfrcr4y8q1q3b" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/25-Attack 2/Attack 2 02.png" id="40_7wqpr"]
+[ext_resource type="Texture2D" uid="uid://dfjcfr41obrf4" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/25-Attack 2/Attack 2 03.png" id="41_e1bju"]
+[ext_resource type="Texture2D" uid="uid://c602tr30yteaa" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/26-Attack 3/Attack 3 01.png" id="42_uo4d4"]
+[ext_resource type="Texture2D" uid="uid://c5b75oqnnssiy" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/26-Attack 3/Attack 3 02.png" id="43_rw3iw"]
+[ext_resource type="Texture2D" uid="uid://d05pjyqa51xfn" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/26-Attack 3/Attack 3 03.png" id="44_gj7qj"]
+[ext_resource type="Texture2D" uid="uid://d3hn2mcxj3qy" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/27-Air Attack 1/Air Attack 1 01.png" id="45_20c6k"]
+[ext_resource type="Texture2D" uid="uid://h360uaiyaeh5" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/27-Air Attack 1/Air Attack 1 02.png" id="46_2plbx"]
+[ext_resource type="Texture2D" uid="uid://bw35vweqwbvy5" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/28-Air Attack 2/Air Attack 2 01.png" id="47_capee"]
+[ext_resource type="Texture2D" uid="uid://isad42o4pex2" path="res://Treasure Hunters/Captain Clown Nose/Captain Clown Nose/Sword Effects/28-Air Attack 2/Air Attack 2 02.png" id="48_ysycg"]
 
 [sub_resource type="Animation" id="Animation_kilcf"]
 resource_name = "Dead Ground"
@@ -323,8 +336,13 @@ tracks/2/keys = {
 }
 tracks/2/use_blend = true
 
+[sub_resource type="Animation" id="Animation_efr1d"]
+resource_name = "Air Attack I"
+step = 0.05
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g7xoc"]
 _data = {
+&"Air Attack I": SubResource("Animation_efr1d"),
 &"Dead Ground": SubResource("Animation_kilcf"),
 &"Dead Hit": SubResource("Animation_e0k5m"),
 &"Fall": SubResource("Animation_0noth"),
@@ -473,11 +491,79 @@ transitions = ["Start", "Without Sword", SubResource("AnimationNodeStateMachineT
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eeal"]
 radius = 9.0
-height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_najpk"]
 radius = 9.0
-height = 28.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1bju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_20c6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2plbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_capee")
+}],
+"loop": false,
+"name": &"Attack I",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_ysycg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7wqpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_e1bju")
+}],
+"loop": false,
+"name": &"Attack II",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_uo4d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rw3iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_gj7qj")
+}],
+"loop": false,
+"name": &"Attack III",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo4d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_20c6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2plbx")
+}],
+"loop": false,
+"name": &"Air Attack I",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_capee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ysycg")
+}],
+"loop": false,
+"name": &"Air Attack II",
+"speed": 10.0
+}]
 
 [node name="Roger" type="CharacterBody2D"]
 collision_layer = 256
@@ -490,6 +576,7 @@ _jump_dust = ExtResource("2_mf7a3")
 _invincible_duration = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
 texture = ExtResource("2_g7xoc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
@@ -504,7 +591,7 @@ advance_expression_base_node = NodePath("../../..")
 anim_player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_3eeal")
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="."]
@@ -518,9 +605,37 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -3)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_najpk")
 debug_color = Color(0.484208, 0.0983573, 0.0215744, 0.42)
 
 [node name="Invincible" type="Timer" parent="HurtBox"]
 one_shot = true
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 1024
+collision_mask = 131072
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_najpk")
+debug_color = Color(0.618712, 0.748344, 0.448111, 0.42)
+
+[node name="InputBuffer" type="Timer" parent="HitBox"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="HitBox"]
+one_shot = true
+
+[node name="Attack Effects" type="AnimatedSprite2D" parent="HitBox"]
+position = Vector2(30, -9)
+sprite_frames = SubResource("SpriteFrames_e1bju")
+animation = &"Attack I"
+
+[node name="Air Attack Effects" type="AnimatedSprite2D" parent="HitBox"]
+position = Vector2(18, 3)
+sprite_frames = SubResource("SpriteFrames_uo4d4")
+animation = &"Air Attack I"

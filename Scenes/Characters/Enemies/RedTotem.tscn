@@ -28,50 +28,8 @@ tracks/0/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_crs3f"]
-resource_name = "destroyed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_5xugc")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Debris")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"scatter"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_hk7i3"]
-resource_name = "fire"
+resource_name = "Fire"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -112,8 +70,50 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_crs3f"]
+resource_name = "Destroyed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5xugc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Debris")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"scatter"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_smx5d"]
-resource_name = "hit"
+resource_name = "Hit"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -141,7 +141,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_76mlr"]
-resource_name = "idle"
+resource_name = "Idle"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -158,11 +158,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v5qxf"]
 _data = {
-&"RESET": SubResource("Animation_08dwg"),
-&"destroyed": SubResource("Animation_crs3f"),
-&"fire": SubResource("Animation_hk7i3"),
-&"hit": SubResource("Animation_smx5d"),
-&"idle": SubResource("Animation_76mlr")
+&"Destroyed": SubResource("Animation_crs3f"),
+&"Fire": SubResource("Animation_hk7i3"),
+&"Hit": SubResource("Animation_smx5d"),
+&"Idle": SubResource("Animation_76mlr"),
+&"RESET": SubResource("Animation_08dwg")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cye5p"]
@@ -248,7 +248,7 @@ collision_mask = 65537
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
-texture = ExtResource("8_lk2dk")
+texture = ExtResource("1_oyarl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
